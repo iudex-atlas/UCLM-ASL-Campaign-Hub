@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campaign 2025 — Your Voice, Your Vote</title>
+  <link rel="stylesheet" href="ASL 26-27.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">ASL<span>ELECTION 26-27</span></div>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="active" data-section="home" onclick="showSection('home',this)">Home</a></li>
+      <li><a href="#" data-section="about"      onclick="showSection('about',this)">About</a></li>
+      <li><a href="#" data-section="candidates" onclick="showSection('candidates',this)">Candidates</a></li>
+      <li><a href="#" data-section="platform"   onclick="showSection('platform',this)">Platform</a></li>
+      <li><a href="#" data-section="news"        onclick="showSection('news',this)">Updates</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header>
+  <div class="header-logos">
+    <div class="logo-placeholder"> <img src="imgs/ASL logo.jpg" alt="Organization Logo"> </div>
+    <div class="logo-placeholder"> <img src="imgs/uc_logo-removebg-preview.png" alt="Organization Logo"></div>
+    <div class="logo-placeholder"> <img src="imgs/uclm scholarship office.jpg" alt="Organization Logo"></div>
+  </div>
+  <h1>UCLM Academic Scholar's League</em></h1>
+  <p class="tagline">Serving with integrity, leading with purpose — for every member, every vote counts.</p>
+  <div class="header-accent"></div>
+</header>
+
+<!-- ═══════════════════ SECTIONS ═══════════════════ -->
+
+<!-- HOME -->
+<section class="page-section active" id="home">
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2rem;text-align:center;">
+    <p class="section-eyebrow">ASL Election A.Y. 2026-2027</p>
+    <h2 class="section-title">Welcome to the Official<br>ASL Campaign Hub</h2>
+    <p style="font-size:1.05rem;line-height:1.8;color:var(--gray-700);max-width:600px;margin:0 auto 2rem;">
+      This is the central platform where you can learn about the candidates, understand their platforms, and make an informed decision on election day.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button onclick="showSection('candidates', document.querySelector('[data-section=candidates]'))"
+        style="background:var(--red);color:#fff;border:none;padding:0.75rem 1.75rem;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background 0.2s;"
+        onmouseover="this.style.background='var(--red-dark)'" onmouseout="this.style.background='var(--red)'">
+        Meet the Candidates →
+      </button>
+      <button onclick="showSection('about', document.querySelector('[data-section=about]'))"
+        style="background:transparent;color:var(--red);border:2px solid var(--red);padding:0.75rem 1.75rem;border-radius:8px;font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.2s;"
+        onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='transparent'">
+        Learn More
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="page-section" id="about">
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2rem;">
+    <p class="section-eyebrow">We Are the Academic Scholar's League</p>
+    <h2 class="section-title">About This Campaign</h2>
+    <p class="about-intro">
+      This website serves as the official campaign hub for the upcoming organization election. Our goal is to give every member access to transparent, complete, and honest information about each candidate — their background, their credentials, and their vision for the organization.
+    </p>
+    <div class="about-body">
+      <div class="about-card">
+        <h3>Our Mission</h3>
+        <p>To foster an election process that is fair, transparent, and informed. We believe every member deserves to know who they're voting for and why it matters.</p>
+      </div>
+      <div class="about-card">
+        <h3>Our Vision</h3>
+        <p>A future where leadership is chosen by merit, dedication, and a genuine commitment to serving the organization and its members.</p>
+      </div>
+      <div class="about-card">
+        <h3>The Election</h3>
+        <p>This cycle, members will vote for leaders across multiple positions. Each candidate has submitted their profile and credentials for your review.</p>
+      </div>
+      <div class="about-card">
+        <h3>Your Role</h3>
+        <p>Your vote shapes the direction of the organization. Review each candidate carefully and cast your vote with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CANDIDATES -->
+<section class="page-section" id="candidates">
+  <div id="candidatesContent">
+    <div class="candidates-intro">
+      <p class="section-eyebrow">ASL Election 2026-2027</p>
+      <h2 class="section-title">Meet the Candidates</h2>
+      <p style="color:var(--gray-700);font-size:0.95rem;">Click on any candidate to view their credentials.</p>
+    </div>
+    <!-- Position blocks injected by JS -->
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="page-section" id="platform">
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2rem;">
+    <p class="section-eyebrow">Our Direction</p>
+    <h2 class="section-title">Platforms &amp; Advocacy</h2>
+    <p class="platform-intro">
+      This section highlights the platforms of each candidates running for their respective positions.
+    </p>
+    <div class="platform-grid" id="platformGrid"></div>
+  </div>
+</section>
+
+<!-- UPDATES / NEWS -->
+<section class="page-section" id="news">
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2rem;">
+    <p class="section-eyebrow">Stay Informed</p>
+    <h2 class="section-title">Latest Updates</h2>
+    <p style="font-size:1.05rem;line-height:1.8;color:var(--gray-700);">
+      Announcements, schedule updates, and campaign news will be posted here. Check back regularly.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════ REMINDERS ═══════════════════ -->
+<div id="reminders">
+  <div class="reminders-inner">
+    <h2>📌 Important Reminders</h2>
+    <div class="reminder-grid">
+      <div class="reminder-card">
+        <div class="reminder-icon">🗓️</div>
+        <div>
+          <h4>Election Day</h4>
+          <p><strong>[Date TBD]</strong><br>Mark your calendar and don't forget the election day.</p>
+        </div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-icon">📋</div>
+        <div>
+          <h4>Candidate Application</h4>
+          <p>Deadline: <strong>June 30, 2025</strong><br>Make sure you have filed in the google forms and submitted a certificate of candidacy to the Scholarship's Office.</p>
+        </div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-icon">📍</div>
+        <div>
+          <h4>Voting Venue</h4>
+          <p><strong>[Venue TBD]</strong><br>Polling will take place at the designated location.</p>
+        </div>
+      </div>
+      <div class="reminder-card">
+        <div class="reminder-icon">⏰</div>
+        <div>
+          <h4>Voting Hours</h4>
+          <p><strong>[Time TBD]</strong><br>Polls open and close at the indicated times.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>UCLM Academic Scholar's League</h3>
+        <p>This is the official campaign website for the A.Y. 2026-2027 elections. All information posted here is submitted by the candidates and reviewed by the election committee.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="contact-item">
+          <span>✉️</span>
+          <a href="mailto:uclmacademicscholarsleague@gmail.com">uclmacademicscholarsleague@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>📧</span>
+          <a href="mailto:inquiries.uclmscholarship@gmail.com">inquiries.uclmscholarship@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>📞</span>
+          <span>+63 XXX XXX XXXX</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61556171207362" target="_blank" class="social-btn">
+            <span>📘</span> ASL Faceboook Page
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100094912083618" target="_blank" class="social-btn">
+            <span>📘</span> UCLM Scholarship's Office FB Page
+          </a>
+          <a href="mailto:uclmacademicscholarsleague@gmail.com" class="social-btn">
+            <span>📩</span> ASL Email
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 Your Organization Name. All rights reserved. Made with ❤️ for the campaign.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════ MODAL ═══════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="closeModal(null)" aria-label="Close">✕</button>
+    <div class="modal-left" id="modalLeft">
+      <div class="modal-avatar">
+        <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="22" r="13"/>
+          <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24"/>
+        </svg>
+      </div>
+      <div class="modal-name" id="modalName">Candidate Name</div>
+      <div class="modal-position" id="modalPosition">Position</div>
+    </div>
+    <div class="modal-right" id="modalRight">
+      <h3>Credentials &amp; Background</h3>
+      <ul class="credential-list" id="modalCredentials"></ul>
+    </div>
+  </div>
+</div>
+<script src="ASL 26-27.js" defer></script>
+</body>
+</html>
