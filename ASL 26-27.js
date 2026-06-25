@@ -626,7 +626,6 @@
   };
 
   // ─── CANDIDATE PLATFORMS ──────────────────────────────────
-  // In-depth platform descriptions shown when clicking cards in the Platform section
   const candidatePlatforms = {
     "Izhel Joy Mayol": [
       "Establish a Scholar's Council to ensure every member has a direct voice in organizational decisions.",
@@ -1259,11 +1258,11 @@
   function openModal(name, position, mode) {
     document.getElementById('modalName').textContent = name;
     document.getElementById('modalPosition').textContent = position;
-    const list = document.getElementById('modalCredentials');
-    const modalRightTitle = document.querySelector('.modal-right h3');
+    var list = document.getElementById('modalCredentials');
+    var modalRightTitle = document.querySelector('.modal-right h3');
 
-    const avatarImg = document.getElementById('modalAvatarImg');
-    const candidatePhoto = candidateImages[name] || 'imgs/candidates/default.jpg';
+    var avatarImg = document.getElementById('modalAvatarImg');
+    var candidatePhoto = candidateImages[name] || 'imgs/candidates/default.jpg';
     avatarImg.src = candidatePhoto;
     avatarImg.alt = name + ' photo';
     avatarImg.style.display = 'block';
@@ -1271,16 +1270,21 @@
 
     if (mode === 'platform') {
       modalRightTitle.textContent = 'Platform & Advocacy';
-      const platforms = candidatePlatforms[name] || placeholderPlatforms;
+      var platforms = candidatePlatforms[name] || placeholderPlatforms;
       list.innerHTML = platforms.map(function(p) { return '<li>' + p + '</li>'; }).join('');
     } else {
       modalRightTitle.textContent = 'Credentials & Background';
-      const credentials = candidateCredentials[name] || placeholderCredentials;
+      var credentials = candidateCredentials[name] || placeholderCredentials;
       list.innerHTML = credentials.map(function(c) { return '<li>' + c + '</li>'; }).join('');
     }
 
-    const overlay = document.getElementById('modalOverlay');
+    var overlay = document.getElementById('modalOverlay');
     overlay.style.display = 'flex';
+    /* Reset scroll position every time modal opens */
+    overlay.scrollTop = 0;
+    var modalRight = document.getElementById('modalRight');
+    if (modalRight) { modalRight.scrollTop = 0; }
+
     requestAnimationFrame(function() {
       requestAnimationFrame(function() { overlay.classList.add('open'); });
     });
@@ -1289,7 +1293,7 @@
 
   function closeModal(e) {
     if (e && e.target !== document.getElementById('modalOverlay')) return;
-    const overlay = document.getElementById('modalOverlay');
+    var overlay = document.getElementById('modalOverlay');
     overlay.classList.remove('open');
     setTimeout(function() {
       overlay.style.display = 'none';
@@ -1305,7 +1309,7 @@
   function showSection(id, linkEl) {
     document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
     document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
-    const section = document.getElementById(id);
+    var section = document.getElementById(id);
     if (section) {
       section.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
