@@ -69,7 +69,7 @@
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--gray-700);
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
     }
 
     .nav-links a:hover,
@@ -284,14 +284,16 @@
     .platform-card {
       width: 260px;
       min-width: 220px;
+      border-radius: 10px;
       cursor: pointer;
       position: relative;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, background 0.25s ease;
     }
 
     .platform-card {
       width: 260px;
       min-width: 220px;
+      border-radius: 10px;
     }
 
     .platform-card .card-front {
@@ -312,6 +314,7 @@
       font-size: 0.95rem;
       line-height: 1.75;
       color: var(--gray-700);
+      border-radius: 10px;
     }
 
     .platform-position,
@@ -328,7 +331,7 @@
 
     .card-front {
       background: var(--white);
-      border-radius: var(--radius);
+      border-radius: 10px;
       padding: 1.75rem 1rem 1.25rem;
       display: flex;
       flex-direction: column;
@@ -338,14 +341,22 @@
       transition: box-shadow 0.25s ease, transform 0.25s ease;
     }
 
-    .candidate-card:hover .card-front {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .platform-card:hover,
+    .candidate-card:hover {
       transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(165, 164, 164, 0.08);
+    }
+
+    .candidate-card:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 8px 24px #F5C518;
+      background: #F5C518;
     }
 
     .candidate-card:active .card-front {
       transform: translateY(0) scale(0.98);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 24px #F5C518;
+      background: #F5C518;
     }
 
     .avatar {
@@ -478,9 +489,9 @@
 
     .modal-avatar {
       width: 100%;
-      max-width: 140px;
-      height: 140px;
-      border-radius: 18px;
+      max-width: 180px;
+      height: 180px;
+      border-radius: 20px;
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(255,255,255,0.45);
       display: flex;
@@ -491,9 +502,9 @@
     }
 
     .modal-avatar svg {
-      width: 72px;
-      height: 72px;
-      opacity: 0.5;
+      width: 88px;
+      height: 88px;
+      opacity: 0.45;
     }
 
     .modal-avatar img {
@@ -586,6 +597,18 @@
       background: var(--yellow);
       flex-shrink: 0;
       margin-top: 5px;
+    }
+
+    .platform-card:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 8px 24px #F5C518;
+      background: #F5C518;
+    }
+
+    .platform-card:active .card-front {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 8px 24px #F5C518;
+      background: #F5C518;
     }
 
     .modal-close {
