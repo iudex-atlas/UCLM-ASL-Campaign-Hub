@@ -362,6 +362,7 @@
       width: 260px;
       min-width: 220px;
       border-radius: 10px;
+      background: #A31515;
     }
 
     .platform-card .card-front {
@@ -459,12 +460,14 @@
               justify-content: center;
       overflow: hidden;
       position: relative;
+      border: 3px solid #F5C518;
     }
 
     .avatar svg {
       width: 100px;
       height: 100px;
       opacity: 0.35;
+      border:3px solid #F5C518;
     }
 
     .avatar img {
@@ -478,10 +481,10 @@
     }
 
     .candidate-name {
-      font-size: 0.88rem;
+      font-size: 0.99rem;
       font-weight: 700;
       text-align: center;
-      color: var(--gray-900);
+      color: var(--black);
       line-height: 1.35;
     }
 
@@ -678,7 +681,8 @@
       height: 150px;
       border-radius: 20px;
       background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.45);
+      border:5px solid #F5C518;
+      border-radius: 20px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
